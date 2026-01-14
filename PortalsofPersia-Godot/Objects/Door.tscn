@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://v72h5ex1uive"]
+
+[ext_resource type="Script" uid="uid://1lmsksuxrj00" path="res://Objects/Scripts/door.gd" id="1_7ihvk"]
+[ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="1_ni8px"]
+
+[sub_resource type="Animation" id="Animation_65nwm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8cbex"]
+resource_name = "door_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -128), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ni8px"]
+resource_name = "door_down'"
+
+[sub_resource type="Animation" id="Animation_7ihvk"]
+resource_name = "door_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -128)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8cbex"]
+_data = {
+&"RESET": SubResource("Animation_65nwm"),
+&"door_down": SubResource("Animation_8cbex"),
+&"door_down\'": SubResource("Animation_ni8px"),
+&"door_up": SubResource("Animation_7ihvk")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qb5o"]
+size = Vector2(128, 128)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_7ihvk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8cbex")
+}
+blend_times = [&"door_up", &"door_down", 0.5, &"door_up", &"door_up", 0.5]
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_ni8px")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+shape = SubResource("RectangleShape2D_4qb5o")

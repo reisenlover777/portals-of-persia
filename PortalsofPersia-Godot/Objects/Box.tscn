@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhbj3oou6cb25"]
+
+[ext_resource type="Texture2D" uid="uid://dwgjyb8e4y18u" path="res://assets/placeholderBox.png" id="1_2s26f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewiju"]
+size = Vector2(128, 128)
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["Rigidbody"]]
+collision_layer = 6
+collision_mask = 7
+
+[node name="PlaceholderBox" type="Sprite2D" parent="."]
+position = Vector2(0, 3.1843501e-06)
+scale = Vector2(0.05807014, 0.07742686)
+texture = ExtResource("1_2s26f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.3339033, 0.3339033)
+shape = SubResource("RectangleShape2D_ewiju")
+debug_color = Color(0.72671264, 0.46548343, 0.27869663, 0.41960785)

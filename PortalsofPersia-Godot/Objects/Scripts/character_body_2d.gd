@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+const PUSHFORCE = 50.0;
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -25,3 +25,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	# code for rigid bodies; https://www.youtube.com/watch?v=SJuScDavstM
+	# rigid bodies ontop the player will cause them to be pushed into the floor however
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * PUSHFORCE)

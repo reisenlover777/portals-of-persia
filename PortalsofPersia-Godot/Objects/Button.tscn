@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://bj7cmmgahvps1"]
+
+[ext_resource type="Script" uid="uid://c2o4hucfhrvv" path="res://Objects/Scripts/button.gd" id="1_schvp"]
+[ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_i4unk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j7m4"]
+size = Vector2(128, 89)
+
+[sub_resource type="Animation" id="Animation_eq6vk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_058xg"]
+resource_name = "button_push_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.2416),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 12.13)]
+}
+
+[sub_resource type="Animation" id="Animation_5t0q4"]
+resource_name = "button_push_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 12.13), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_schvp"]
+resource_name = "still"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kyk0m"]
+_data = {
+&"RESET": SubResource("Animation_eq6vk"),
+&"button_push_down": SubResource("Animation_058xg"),
+&"button_push_up": SubResource("Animation_5t0q4"),
+&"still": SubResource("Animation_schvp")
+}
+
+[node name="Button" type="Node2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_schvp")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_i4unk")
+
+[node name="Area2D" type="Area2D" parent="Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_5j7m4")
+debug_color = Color(0.7941012, 0.07402735, 0.99999994, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kyk0m")
+}
+blend_times = [&"RESET", &"button_push_down", 0.5, &"RESET", &"button_push_up", 0.5, &"RESET", &"still", 0.5]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_5j7m4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

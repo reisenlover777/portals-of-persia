@@ -2,30 +2,30 @@
 
 [ext_resource type="Script" uid="uid://b2llctp0ypqij" path="res://Objects/Scripts/character_body_2d.gd" id="1_n6db0"]
 [ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_yk4ok"]
-[ext_resource type="Script" uid="uid://21k8iecmgki4" path="res://Objects/Scripts/Camera.gd" id="3_yk4ok"]
+[ext_resource type="Script" uid="uid://21k8iecmgki4" path="res://Objects/Scripts/camera.gd" id="3_yk4ok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6db0"]
 size = Vector2(129.75012, 128)
 
-[node name="Player" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_n6db0")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.39999926, 0.39999688)
 texture = ExtResource("2_yk4ok")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.050023317, 0)
 scale = Vector2(0.3999992, 0.39999694)
 shape = SubResource("RectangleShape2D_n6db0")
+debug_color = Color(0.85157263, 0.78608793, 1, 0.41960785)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+limit_enabled = false
 position_smoothing_enabled = true
-position_smoothing_speed = 13.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+position_smoothing_speed = 15.705
 drag_left_margin = 0.05
 drag_right_margin = 0.05
 drag_bottom_margin = 0.1

@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://boq6enn8eyw1s"]
+[gd_scene load_steps=7 format=3 uid="uid://boq6enn8eyw1s"]
 
 [ext_resource type="PackedScene" uid="uid://djk2eswadqbw1" path="res://Objects/Player.tscn" id="1_8xinf"]
 [ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_4mqg7"]
+[ext_resource type="PackedScene" uid="uid://c7har3p040vh7" path="res://Objects/DebugMenu.tscn" id="2_y1jas"]
+[ext_resource type="PackedScene" uid="uid://bj7cmmgahvps1" path="res://Objects/Button.tscn" id="3_7v7vq"]
+[ext_resource type="PackedScene" uid="uid://v72h5ex1uive" path="res://Objects/Door.tscn" id="4_arv4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mqg7"]
 size = Vector2(832, 59.5625)
@@ -11,14 +14,27 @@ size = Vector2(832, 59.5625)
 [node name="Player" parent="." instance=ExtResource("1_8xinf")]
 position = Vector2(576, 274)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="DebugMenu" parent="Player" instance=ExtResource("2_y1jas")]
+position = Vector2(472, -322)
 
-[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+[node name="Floor" type="StaticBody2D" parent="." groups=["world"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="Icon" type="Sprite2D" parent="Floor"]
 position = Vector2(571, 616)
-scale = Vector2(6.4908137, 0.4603458)
+scale = Vector2(34.629467, 0.46500129)
 texture = ExtResource("2_4mqg7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(571, 615.78125)
+scale = Vector2(5.3351502, 1.010113)
 shape = SubResource("RectangleShape2D_4mqg7")
-debug_color = Color(0.83137256, 0.67058825, 0.94509804, 0.41960785)
+
+[node name="Button" parent="." instance=ExtResource("3_7v7vq")]
+position = Vector2(286, 593)
+scale = Vector2(1.0431664, 0.22272325)
+
+[node name="Door" parent="." node_paths=PackedStringArray("button") instance=ExtResource("4_arv4r")]
+position = Vector2(32, 528)
+button = NodePath("../Button")
