@@ -13,10 +13,13 @@ initial_velocity_max = 642.86
 radial_velocity_min = -476.19
 radial_velocity_max = 390.47998
 gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.39999998
 hue_variation_min = -0.07000002
 hue_variation_max = 0.09999997
 
 [node name="Explosion" type="GPUParticles2D"]
+scale = Vector2(0.2, 0.2)
 amount = 60
 texture = ExtResource("1_vowpr")
 lifetime = 2.0

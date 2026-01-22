@@ -10,11 +10,10 @@ func explode(node: Node):
 	scene_instance.position = node.position;
 	get_tree().get_current_scene().add_child(scene_instance);
 	node.queue_free()
-	emit_signal("exploded")
 
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	print(area.name)
-	if(area.name == "Door"):
+	if(area.name == "Door" && area.get_parent().get_parent().get_parent().downState):
 		print("killing")
+		emit_signal("exploded", self)
 		explode(self)

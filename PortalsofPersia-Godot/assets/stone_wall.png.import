@@ -2,27 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qjcgrbidyeik"
-path="res://.godot/imported/newer wall tile.png-11ad202f16dee324b6c60fb9b69ef71e.ctex"
+uid="uid://1baipmk3uyny"
+path="res://.godot/imported/stone_wall.png-7c887cc96655027a3b1704cff724670e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/newer wall tile.png"
-dest_files=["res://.godot/imported/newer wall tile.png-11ad202f16dee324b6c60fb9b69ef71e.ctex"]
+source_file="res://assets/stone_wall.png"
+dest_files=["res://.godot/imported/stone_wall.png-7c887cc96655027a3b1704cff724670e.ctex"]
 
 [params]
 
 compress/mode=0
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
