@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c47kno46ytfkf"]
+[gd_scene format=3 uid="uid://c47kno46ytfkf"]
 
-[ext_resource type="Script" path="res://Objects/Scripts/portal.gd" id="1_mk3a1"]
+[ext_resource type="Script" uid="uid://oc2x0b00r1q7" path="res://Objects/Scripts/portal.gd" id="1_mk3a1"]
 [ext_resource type="Texture2D" uid="uid://dp6bfe5vymtth" path="res://assets/Portal.png" id="2_nhmqr"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_el8tj"]
 size = Vector2(16, 32)
@@ -62,16 +61,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" groups=["Portal"]]
+[node name="Node2D" type="Node2D" unique_id=1005885103 groups=["Portal"]]
 script = ExtResource("1_mk3a1")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1753085727]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=222681103]
 shape = SubResource("RectangleShape2D_el8tj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=896722031]
 sprite_frames = SubResource("SpriteFrames_r8kna")
 animation = &"Purple"
 frame_progress = 0.62785095
 speed_scale = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
