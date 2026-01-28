@@ -29,9 +29,9 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)
-	body.global_position = pairedPortal.global_position+out.rotated(pairedPortal.global_rotation)
+	body.global_position = pairedPortal.global_position+2*out.rotated(pairedPortal.global_rotation)
 	if(body is RigidBody2D):
-		body.apply_central_impulse(out.rotated(pairedPortal.global_rotation))
+		body.apply_central_impulse(8*out.rotated(pairedPortal.global_rotation))
 	if(body is CharacterBody2D):
 		body.velocity+= out.rotated(pairedPortal.global_rotation)
 		pass
