@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhbj3oou6cb25"]
 
-[ext_resource type="Texture2D" uid="uid://dwgjyb8e4y18u" path="res://assets/placeholderBox.png" id="1_2s26f"]
 [ext_resource type="Script" uid="uid://blue8o1rl0mlj" path="res://Objects/Scripts/box.gd" id="1_ewiju"]
+[ext_resource type="Texture2D" uid="uid://cyww7mo20xsfx" path="res://assets/box.png" id="2_ewiju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewiju"]
 size = Vector2(128, 128)
@@ -18,8 +18,8 @@ script = ExtResource("1_ewiju")
 
 [node name="PlaceholderBox" type="Sprite2D" parent="." unique_id=803413269]
 position = Vector2(0, 3.1843501e-06)
-scale = Vector2(0.05807014, 0.07742686)
-texture = ExtResource("1_2s26f")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_ewiju")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1302610838]
 scale = Vector2(0.3339033, 0.3339033)
