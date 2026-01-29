@@ -64,6 +64,7 @@ animations = [{
 [node name="Node2D" type="Node2D" unique_id=1005885103 groups=["Portal"]]
 scale = Vector2(4, 4)
 script = ExtResource("1_mk3a1")
+displacement = 8
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1753085727]
 collision_layer = 3

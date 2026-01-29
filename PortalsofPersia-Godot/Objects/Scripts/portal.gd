@@ -1,6 +1,7 @@
 extends Node2D
 var pairedPortal: Node2D;
-var out: Vector2 = Vector2(70,0);
+@export var out: Vector2 = Vector2(70,0);
+@export var displacement = 2;
 var animationNode: AnimatedSprite2D;
 
 # Called when the node enters the scene tree for the first time.
@@ -28,10 +29,11 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body)
-	body.global_position = pairedPortal.global_position+2*out.rotated(pairedPortal.global_rotation)
+	print(body.global_position)
+	body.global_position = pairedPortal.global_position+out.rotated(pairedPortal.global_rotation)
+	print(body.global_position)
 	if(body is RigidBody2D):
-		body.apply_central_impulse(8*out.rotated(pairedPortal.global_rotation))
+		body.apply_central_impulse(displacement*out.rotated(pairedPortal.global_rotation))
 	if(body is CharacterBody2D):
 		body.velocity+= out.rotated(pairedPortal.global_rotation)
 		pass
