@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://drm2a4163asol"]
+
+[ext_resource type="Texture2D" uid="uid://du6w4xlk1rel6" path="res://assets/starry background.jpeg" id="1_bx1fu"]
+[ext_resource type="Script" uid="uid://b1srq0juexrqa" path="res://Objects/background.gd" id="1_xo5rv"]
+
+[node name="Background" type="Node2D" unique_id=1722245458]
+z_index = -1
+script = ExtResource("1_xo5rv")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1886229206]
+visibility_layer = 16
+z_index = -5
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=795689976]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_bx1fu")

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_yk4ok"]
 [ext_resource type="Script" uid="uid://21k8iecmgki4" path="res://Objects/Scripts/camera.gd" id="3_yk4ok"]
 [ext_resource type="Texture2D" uid="uid://do4kiqicyslac" path="res://assets/walk.png" id="4_gijnf"]
+[ext_resource type="Texture2D" uid="uid://dpkqjm3havidw" path="res://assets/Stand.png" id="5_u60sl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u60sl"]
 
@@ -39,6 +40,10 @@ region = Rect2(240, 0, 40, 41)
 atlas = ExtResource("4_gijnf")
 region = Rect2(280, 0, 40, 41)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a14ne"]
+atlas = ExtResource("5_u60sl")
+region = Rect2(0, 0, 21, 42)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_a14ne"]
 animations = [{
 "frames": [{
@@ -68,6 +73,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a14ne")
+}],
+"loop": true,
+"name": &"Stand",
 "speed": 5.0
 }]
 
@@ -102,6 +115,5 @@ script = ExtResource("3_yk4ok")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1545926061]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_a14ne")
-animation = &"Run"
-frame_progress = 0.8528996
+animation = &"Stand"
 speed_scale = 2.5
