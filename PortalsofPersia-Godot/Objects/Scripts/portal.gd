@@ -31,6 +31,8 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if pairedPortal == null:
+		return
 	if body is TileMapLayer or body in get_tree().get_nodes_in_group("Portal"):
 		return
 	print(body.global_position)
