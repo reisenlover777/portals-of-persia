@@ -23,7 +23,7 @@ func buttonChange(isDown):
 
 func _physics_process(delta: float) -> void:
 	if(downState):
-		position = lerp(position, downPos, 0.03)
+		position = lerp(position, downPos, 0.03 * delta * 60)
 	else:
-		position = lerp(position, upPos, 0.03)
+		position = lerp(position, upPos, 0.03 * delta * 60)
 		
