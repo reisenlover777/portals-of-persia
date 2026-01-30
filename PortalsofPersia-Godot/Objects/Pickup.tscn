@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://da67renlddpvn"]
+[gd_scene load_steps=16 format=3 uid="uid://da67renlddpvn"]
 
 [ext_resource type="Script" uid="uid://c2ku3n7f1ug0t" path="res://Objects/pickup.gd" id="1_srn13"]
-[ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_uoaj8"]
 [ext_resource type="Texture2D" uid="uid://c1srv4uhfqomr" path="res://assets/button.png" id="3_l8kga"]
+[ext_resource type="Texture2D" uid="uid://cidxk4ne0bcw0" path="res://assets/arrow-sheet.png" id="3_srn13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j7m4"]
 size = Vector2(128, 89)
@@ -62,14 +62,38 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoaj8"]
+atlas = ExtResource("3_srn13")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8kga"]
+atlas = ExtResource("3_srn13")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8qn7"]
+atlas = ExtResource("3_srn13")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6l7bj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoaj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8kga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8qn7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Pickup" type="Node2D"]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_srn13")
-
-[node name="downArrow" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(0, -396.66666)
-texture = ExtResource("2_uoaj8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -95,6 +119,13 @@ speed_scale = 4.0
 position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_5j7m4")
 debug_color = Color(0.7941012, 0.07402735, 0.99999994, 0.41960785)
+
+[node name="downArrow" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -396.66666)
+scale = Vector2(12.182485, 12.182485)
+sprite_frames = SubResource("SpriteFrames_6l7bj")
+autoplay = "default"
+frame_progress = 0.54264444
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
