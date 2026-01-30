@@ -10,11 +10,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body.name + " entered !")
 	isDown = true;
 	emit_signal("buttonChanged", isDown)
-	$AnimationPlayer.play("button_push_down")
+	$AnimatedSprite2D.play("Pressed")
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if($Area2D.has_overlapping_bodies()): return;
 	print(body.name + " left !")
 	isDown = false;
 	emit_signal("buttonChanged", isDown)
-	$AnimationPlayer.play("button_push_up")
+	$AnimatedSprite2D.play("Unpressed")

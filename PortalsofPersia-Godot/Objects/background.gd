@@ -4,12 +4,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(spd>0):
-		$Parallax2D.autoscroll = Vector2(spd*$Parallax2D.scroll_scale.x,0)
-		$Parallax2D2.autoscroll = Vector2(spd*$Parallax2D2.scroll_scale.x,0)
-		$Parallax2D3.autoscroll = Vector2(spd*$Parallax2D3.scroll_scale.x,0)
-		$Parallax2D4.autoscroll = Vector2(spd*$Parallax2D4.scroll_scale.x,0)
-		$Parallax2D5.autoscroll = Vector2(spd*$Parallax2D5.scroll_scale.x,0)
-
+		for i in self.get_children():
+			i.autoscroll = Vector2(spd*i.scroll_scale.x,0)
 	pass # Replace with function body.
 
 

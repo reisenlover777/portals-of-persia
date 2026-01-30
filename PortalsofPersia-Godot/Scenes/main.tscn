@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://q3ui62hdrjh0"]
+[gd_scene format=3 uid="uid://jhy7o5epj67o"]
 
-[ext_resource type="Script" uid="uid://ctvjuq58orl0q" path="res://Scenes/main.gd" id="1_jjgbg"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://drm2a4163asol" path="res://Objects/background.tscn" id="3_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://crohskj1jc6yf" path="res://assets/parallax foreground trees.png" id="4_kry3j"]
 
 [node name="Control" type="Control" unique_id=327854097]
 layout_mode = 3
@@ -13,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_jjgbg")
 
 [node name="background" type="Sprite2D" parent="." unique_id=741997488]
+visible = false
 position = Vector2(326, 70)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=2090024714]
@@ -84,6 +87,22 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
+
+[node name="Background" parent="." unique_id=1722245458 instance=ExtResource("3_jjvhh")]
+
+[node name="Parallax2D9" type="Parallax2D" parent="." unique_id=1700293174]
+modulate = Color(1, 1, 1, 0.8745098)
+z_index = -1
+scroll_scale = Vector2(1.25, 1.25)
+repeat_size = Vector2(2600, 0)
+autoscroll = Vector2(200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D9" unique_id=1419724228]
+modulate = Color(0.11981777, 0.22507572, 0.33023602, 1)
+position = Vector2(0, 100)
+scale = Vector2(4, 4)
+texture = ExtResource("4_kry3j")
+centered = false
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
