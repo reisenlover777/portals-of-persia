@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dkbq5jfhrj8gb"]
+
+[ext_resource type="Script" uid="uid://cedjyvpperlhn" path="res://node_2d.gd" id="1_r4m6q"]
+[ext_resource type="Texture2D" uid="uid://dgs88jtw6jj0o" path="res://assets/Golden Gate.png" id="2_svf3e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rncy1"]
+atlas = ExtResource("2_svf3e")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r27x7"]
+atlas = ExtResource("2_svf3e")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjb88"]
+atlas = ExtResource("2_svf3e")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfl50"]
+atlas = ExtResource("2_svf3e")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s3ll"]
+atlas = ExtResource("2_svf3e")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hco1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rncy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r27x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjb88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfl50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s3ll")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofmv5"]
+
+[node name="Node2D" type="Node2D" unique_id=916632886]
+script = ExtResource("1_r4m6q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=443632715]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_5hco1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1395128057]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1807777214]
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_ofmv5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
