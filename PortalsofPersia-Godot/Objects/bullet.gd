@@ -1,13 +1,16 @@
 extends Node2D
 @export var trailsize = 10
 const packPortal = preload("res://Objects/portal.tscn")
+var spd = 400;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimatedSprite2D.play("default")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	position+=delta*spd*Vector2(cos(self.rotation),sin(self.rotation))
 	$Line2D.add_point(global_position)
 	if $Line2D.points.size() > trailsize:
 		$Line2D.remove_point(0)
