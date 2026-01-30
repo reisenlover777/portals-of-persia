@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://djk2eswadqbw1"]
+[gd_scene format=3 uid="uid://djk2eswadqbw1"]
 
 [ext_resource type="Script" uid="uid://b2llctp0ypqij" path="res://Objects/Scripts/character_body_2d.gd" id="1_n6db0"]
 [ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_yk4ok"]
@@ -161,25 +161,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=759123334]
 collision_mask = 7
 floor_snap_length = 4.0
 platform_on_leave = 2
 safe_margin = 0.032
 script = ExtResource("1_n6db0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=368789327]
 visible = false
 scale = Vector2(0.39999926, 0.39999688)
 texture = ExtResource("2_yk4ok")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1169853515]
 position = Vector2(-0.050023317, 0)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CapsuleShape2D_u60sl")
 debug_color = Color(0.85157263, 0.78608793, 1, 0.41960785)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=668126362]
 process_callback = 0
 limit_enabled = false
 position_smoothing_enabled = true
@@ -189,10 +189,10 @@ drag_right_margin = 0.05
 drag_bottom_margin = 0.1
 script = ExtResource("3_yk4ok")
 
-[node name="pauseMenu" parent="Camera2D" instance=ExtResource("4_qwxmt")]
+[node name="pauseMenu" parent="Camera2D" unique_id=104771512 instance=ExtResource("4_qwxmt")]
 visible = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=785778706]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_a14ne")
 animation = &"Jump"

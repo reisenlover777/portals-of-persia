@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://6753x1kghwdb"]
+[gd_scene format=4 uid="uid://6753x1kghwdb"]
 
 [ext_resource type="AudioStream" uid="uid://bs48g4jqxyg2n" path="res://assets/mu_ManaTwoPart1_idle.mp3" id="1_lyd6k"]
 [ext_resource type="PackedScene" uid="uid://djk2eswadqbw1" path="res://Objects/Player.tscn" id="1_vly50"]

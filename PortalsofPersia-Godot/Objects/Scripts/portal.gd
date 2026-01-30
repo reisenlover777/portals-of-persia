@@ -16,7 +16,7 @@ func _ready() -> void:
 			pairedPortal = get_tree().get_first_node_in_group("Portal");
 			if pairedPortal==self:
 				pairedPortal = get_tree().get_nodes_in_group("Portal").get(1);
-	if pairedPortal.animationNode == null:
+	if pairedPortal == null:
 		$AnimatedSprite2D.play("Green")
 	elif pairedPortal.animationNode.animation == "Purple":
 		$AnimatedSprite2D.play("Green")
@@ -31,6 +31,8 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if pairedPortal == null:
+		return
 	if body is TileMapLayer or body in get_tree().get_nodes_in_group("Portal"):
 		return
 	print(body.global_position)
