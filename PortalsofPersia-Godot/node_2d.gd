@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	$AnimatedSprite2D.play("default")
-	get_tree().change_scene_to_file(nextLevelFileName)
+	if body is CharacterBody2D:
+		$AnimatedSprite2D.play("default")
+		get_tree().change_scene_to_file(nextLevelFileName)
 	pass # Replace with function body.
