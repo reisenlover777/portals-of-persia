@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	if(spd>0):
 		for i in self.get_children():
-			i.autoscroll = Vector2(spd*i.scroll_scale.x,0)
+			i.autoscroll = Vector2(spd*4*i.scroll_scale.x,0)
 	pass # Replace with function body.
 
 
