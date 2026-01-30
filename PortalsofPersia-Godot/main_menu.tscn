@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cp157ttj08gt5" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_fu7sn"]
 [ext_resource type="PackedScene" uid="uid://drm2a4163asol" path="res://Objects/background.tscn" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://crohskj1jc6yf" path="res://assets/parallax foreground trees.png" id="4_jix8l"]
 
 [node name="Main Menu" type="Control" unique_id=733688185]
 layout_mode = 3
@@ -40,3 +41,16 @@ texture_normal = ExtResource("2_fu7sn")
 [node name="Background" parent="." unique_id=1722245458 instance=ExtResource("3_fu7sn")]
 z_index = -2
 spd = 80
+
+[node name="Parallax2D6" type="Parallax2D" parent="Background" unique_id=779160606]
+modulate = Color(1, 1, 1, 0.8745098)
+scroll_scale = Vector2(1.25, 1.25)
+repeat_size = Vector2(2600, 0)
+autoscroll = Vector2(200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D6" unique_id=1719094307]
+modulate = Color(0.11981777, 0.22507572, 0.33023602, 1)
+position = Vector2(0, 100)
+scale = Vector2(4, 4)
+texture = ExtResource("4_jix8l")
+centered = false
