@@ -16,6 +16,7 @@ func _ready() -> void:
 			pairedPortal = get_tree().get_first_node_in_group("Portal");
 			if pairedPortal==self:
 				pairedPortal = get_tree().get_nodes_in_group("Portal").get(1);
+			pairedPortal.pairedPortal = self
 	if pairedPortal == null:
 		$AnimatedSprite2D.play("Green")
 	elif pairedPortal.animationNode == null:
