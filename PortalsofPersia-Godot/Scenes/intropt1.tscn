@@ -1,12 +1,13 @@
-[gd_scene format=4 uid="uid://cqnaf8ut4nrvo"]
+[gd_scene format=4 uid="uid://d22h8174mfyet"]
 
 [ext_resource type="PackedScene" uid="uid://mkihptypu8ej" path="res://Objects/tile_map_layer.tscn" id="1_c5erv"]
-[ext_resource type="Script" path="res://Scenes/intropt_1.gd" id="1_y2ewy"]
+[ext_resource type="Script" uid="uid://tb3mkgtoo71i" path="res://Scenes/intropt_1.gd" id="1_y2ewy"]
 [ext_resource type="PackedScene" uid="uid://djk2eswadqbw1" path="res://Objects/Player.tscn" id="2_lyd6k"]
 [ext_resource type="PackedScene" uid="uid://drm2a4163asol" path="res://Objects/background.tscn" id="3_y4dr7"]
 [ext_resource type="PackedScene" uid="uid://dkbq5jfhrj8gb" path="res://Objects/GoldenGate.tscn" id="5_wtp1w"]
+[ext_resource type="FontFile" uid="uid://l4ovprpdyykl" path="res://assets/antiquity-print.ttf" id="6_y2ewy"]
 
-[node name="Node2D" type="Node2D" unique_id=122336837]
+[node name="Node2D2" type="Node2D" unique_id=122336837]
 position = Vector2(1, -1)
 script = ExtResource("1_y2ewy")
 
@@ -21,3 +22,13 @@ tile_map_data = PackedByteArray("AADm/wkAAAAAAAAAAADn/wkAAAABAAAAAADo/wkAAAABAAA
 
 [node name="Player" parent="." unique_id=1536102383 instance=ExtResource("2_lyd6k")]
 position = Vector2(317, 575)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1350865507]
+z_index = -1
+offset_left = 171.0
+offset_top = 434.0
+offset_right = 626.0
+offset_bottom = 611.0
+theme_override_fonts/normal_font = ExtResource("6_y2ewy")
+theme_override_font_sizes/normal_font_size = 28
+text = "Use arrow keys to move"
