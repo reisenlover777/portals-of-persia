@@ -26,6 +26,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
 		body.apply_central_impulse(out*600)
 		self.queue_free()
-	if body is RigidBody2D:
+	if body is StaticBody2D:
 		self.queue_free()
 	pass # Replace with function body.
