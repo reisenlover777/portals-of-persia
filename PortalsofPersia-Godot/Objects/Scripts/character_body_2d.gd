@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 375.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 const PUSHFORCE = 50.0;
 const SPRINT_MULT = 1.5
 const bulletNode = preload("res://Objects/bullet.tscn")

@@ -1,7 +1,7 @@
 extends Node2D
 @export var trailsize = 10
 const packPortal = preload("res://Objects/portal.tscn")
-var spd = 400;
+var spd = 800;
 var out:Vector2;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
