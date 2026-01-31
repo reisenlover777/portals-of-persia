@@ -15,7 +15,7 @@ script = ExtResource("1_xo5rv")
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1886229206]
 visibility_layer = 16
 z_index = -5
-scroll_scale = Vector2(0.1, 0.1)
+scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=795689976]
@@ -26,7 +26,7 @@ centered = false
 [node name="Parallax2D6" type="Parallax2D" parent="." unique_id=1512822659]
 visibility_layer = 16
 z_index = -5
-scroll_scale = Vector2(0.15, 0.15)
+scroll_scale = Vector2(0.15, 0)
 repeat_size = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D6" unique_id=992844223]
@@ -38,7 +38,7 @@ centered = false
 [node name="Parallax2D7" type="Parallax2D" parent="." unique_id=210163225]
 visibility_layer = 16
 z_index = -5
-scroll_scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.2, 0)
 scroll_offset = Vector2(0, -40)
 repeat_size = Vector2(1280, 0)
 
@@ -51,7 +51,7 @@ centered = false
 [node name="Parallax2D8" type="Parallax2D" parent="." unique_id=1042050219]
 visibility_layer = 16
 z_index = -5
-scroll_scale = Vector2(0.25, 0.25)
+scroll_scale = Vector2(0.25, 0)
 scroll_offset = Vector2(0, -80)
 repeat_size = Vector2(1280, 0)
 
@@ -63,7 +63,7 @@ centered = false
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=419735583]
 modulate = Color(0.40327704, 0.558342, 0.605266, 0.8039216)
-scroll_scale = Vector2(0.3, 0.3)
+scroll_scale = Vector2(0.3, 0)
 scroll_offset = Vector2(-200, -30)
 repeat_size = Vector2(1280, 0)
 
@@ -73,7 +73,7 @@ texture = ExtResource("3_vf5pd")
 centered = false
 
 [node name="Parallax2D5" type="Parallax2D" parent="." unique_id=847848792]
-scroll_scale = Vector2(0.4, 0.4)
+scroll_scale = Vector2(0.4, 0)
 repeat_size = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D5" unique_id=213822843]
@@ -83,7 +83,7 @@ centered = false
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1304495969]
 modulate = Color(0.5921569, 0.5764706, 0.43137255, 0.9372549)
-scroll_scale = Vector2(0.6, 0.6)
+scroll_scale = Vector2(0.6, 0)
 scroll_offset = Vector2(-400, -30)
 repeat_size = Vector2(1280, 0)
 
@@ -94,7 +94,7 @@ centered = false
 
 [node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1331936601]
 modulate = Color(1, 1, 1, 0.8901961)
-scroll_scale = Vector2(0.75, 0.75)
+scroll_scale = Vector2(0.75, 0)
 repeat_size = Vector2(1280, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Parallax2D4" unique_id=1860890560]

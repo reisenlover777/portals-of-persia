@@ -22,8 +22,9 @@ offset_bottom = 624.0
 theme_override_fonts/normal_font = ExtResource("5_01wpt")
 text = "Press space to spawn a portal"
 
-[node name="Node2D" parent="." unique_id=916632886 instance=ExtResource("3_2hstq")]
-position = Vector2(1289, 548)
-
 [node name="Player" parent="." unique_id=1193333937 instance=ExtResource("3_01wpt")]
 position = Vector2(120, 608)
+
+[node name="Node2D" parent="." unique_id=916632886 instance=ExtResource("3_2hstq")]
+position = Vector2(1306, 548)
+nextLevelFileName = "res://Scenes/firstlevel.tscn"

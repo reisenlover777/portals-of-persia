@@ -8,17 +8,27 @@ const SPRINT_MULT = 1.5
 const bulletNode = preload("res://Objects/bullet.tscn")
 var JUMP = false
 @export var lamp = true
-
+var shoot_cooldown := 0.0
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if Input.is_action_just_pressed("shoot") && lamp:
+	if shoot_cooldown > 0.0:
+		shoot_cooldown -= delta
+	if Input.is_action_just_pressed("shoot") and lamp and shoot_cooldown <= 0.0:
+		shoot_cooldown=2
 		var bulletInst = bulletNode.instantiate()
 		bulletInst.global_position = self.global_position
 		if $AnimatedSprite2D.flip_h:
 			bulletInst.rotation = PI
 		get_tree().root.add_child(bulletInst)
+	
+	if Input.is_action_just_pressed("reset"):
+		for i in get_tree().get_nodes_in_group("Portal") :
+			i.queue_free()
+		get_tree().reload_current_scene()
+
+
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -55,4 +65,3 @@ func _physics_process(delta: float) -> void:
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * PUSHFORCE)
-			
