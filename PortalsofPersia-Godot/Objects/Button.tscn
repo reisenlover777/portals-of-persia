@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2o4hucfhrvv" path="res://Objects/Scripts/button.gd" id="1_schvp"]
 [ext_resource type="Texture2D" uid="uid://53cb0rg6a3bv" path="res://assets/icon.svg" id="2_i4unk"]
-[ext_resource type="Texture2D" uid="uid://c1srv4uhfqomr" path="res://assets/button.png" id="3_i4unk"]
+[ext_resource type="Texture2D" uid="uid://bhluih6wtew2v" path="res://assets/plate.png" id="3_i4unk"]
 
 [sub_resource type="Animation" id="Animation_eq6vk"]
 length = 0.001
@@ -73,43 +73,21 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j7m4"]
-size = Vector2(128, 89)
+size = Vector2(140.66666, 53.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j7m4"]
 atlas = ExtResource("3_i4unk")
-region = Rect2(10, 8, 16, 16)
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_058xg"]
 atlas = ExtResource("3_i4unk")
-region = Rect2(42, 8, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eq6vk"]
-atlas = ExtResource("3_i4unk")
-region = Rect2(10, 40, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5t0q4"]
-atlas = ExtResource("3_i4unk")
-region = Rect2(42, 40, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kyk0m"]
-atlas = ExtResource("3_i4unk")
-region = Rect2(10, 72, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xo0vv"]
-atlas = ExtResource("3_i4unk")
-region = Rect2(42, 72, 16, 16)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yoojv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5j7m4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_058xg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eq6vk")
 }],
 "loop": false,
 "name": &"Pressed",
@@ -117,13 +95,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5t0q4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kyk0m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xo0vv")
+"texture": SubResource("AtlasTexture_058xg")
 }],
 "loop": false,
 "name": &"Unpressed",
@@ -147,21 +119,19 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1909272495]
-position = Vector2(0, -22)
 shape = SubResource("RectangleShape2D_5j7m4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341958330]
-scale = Vector2(8, 8)
+position = Vector2(3.3333333, -29.999998)
+scale = Vector2(8, 32)
 sprite_frames = SubResource("SpriteFrames_yoojv")
-animation = &"Pressed"
-frame = 2
-frame_progress = 1.0
+animation = &"Unpressed"
 speed_scale = 4.0
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1510483334]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1754224926]
-position = Vector2(0, -17.5)
+position = Vector2(0, -33.25)
 shape = SubResource("RectangleShape2D_5j7m4")
 debug_color = Color(0.7941012, 0.07402735, 0.99999994, 0.41960785)
 

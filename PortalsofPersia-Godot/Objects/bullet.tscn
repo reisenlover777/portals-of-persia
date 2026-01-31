@@ -85,8 +85,4 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1402480367]
 shape = SubResource("CircleShape2D_f0hf1")
 
-[node name="Line2D" type="Line2D" parent="." unique_id=1833334221]
-modulate = Color(1, 1, 1, 0.67058825)
-default_color = Color(0, 0.40784314, 0.7058824, 1)
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

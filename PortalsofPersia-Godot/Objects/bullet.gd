@@ -12,10 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position+=delta*spd*out
-	$Line2D.add_point(global_position)
-	if $Line2D.points.size() > trailsize:
-		$Line2D.remove_point(0)
+	self.global_position+=delta*spd*out
 	pass
 
 
