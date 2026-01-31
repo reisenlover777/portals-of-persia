@@ -129,7 +129,7 @@ shape = SubResource("RectangleShape2D_5j7m4")
 position = Vector2(3.3333333, -29.999998)
 scale = Vector2(8, 32)
 sprite_frames = SubResource("SpriteFrames_yoojv")
-animation = &"Pressed"
+animation = &"Unpressed"
 speed_scale = 4.0
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1510483334]

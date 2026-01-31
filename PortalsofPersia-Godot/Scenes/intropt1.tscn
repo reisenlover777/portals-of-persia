@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://d22h8174mfyet"]
+[gd_scene format=4 uid="uid://cqnaf8ut4nrvo"]
 
 [ext_resource type="PackedScene" uid="uid://mkihptypu8ej" path="res://Objects/tile_map_layer.tscn" id="1_c5erv"]
-[ext_resource type="Script" uid="uid://tb3mkgtoo71i" path="res://Scenes/intropt_1.gd" id="1_y2ewy"]
+[ext_resource type="Script" path="res://Scenes/intropt_1.gd" id="1_y2ewy"]
 [ext_resource type="PackedScene" uid="uid://djk2eswadqbw1" path="res://Objects/Player.tscn" id="2_lyd6k"]
 [ext_resource type="PackedScene" uid="uid://drm2a4163asol" path="res://Objects/background.tscn" id="3_y4dr7"]
 [ext_resource type="PackedScene" uid="uid://dkbq5jfhrj8gb" path="res://Objects/GoldenGate.tscn" id="5_wtp1w"]

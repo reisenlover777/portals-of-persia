@@ -102,43 +102,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qb5o"]
-size = Vector2(128, 128)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ihvk"]
-size = Vector2(92.5, 97)
-
 [sub_resource type="Animation" id="Animation_h1g4k"]
 length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StaticBody2D:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StaticBody2D:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
 
 [sub_resource type="Animation" id="Animation_yb7v8"]
 resource_name = "door opening"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StaticBody2D:scale:y")
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -146,40 +118,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(),
 "update": 1,
 "values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("StaticBody2D:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("StaticBody2D:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_am4us"]
@@ -188,6 +126,12 @@ _data = {
 &"door opening": SubResource("Animation_yb7v8")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhhw3"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m0ms"]
+size = Vector2(92.5, 97)
+
 [node name="Door" type="Node2D" unique_id=59834607]
 script = ExtResource("1_jhhw3")
 
@@ -195,20 +139,19 @@ script = ExtResource("1_jhhw3")
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_44dlc")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1666869265]
-scale = Vector2(1e-05, 1e-05)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=232733332]
-shape = SubResource("RectangleShape2D_4qb5o")
-
-[node name="Door" type="Area2D" parent="StaticBody2D" unique_id=321578461]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Door" unique_id=1476786718]
-position = Vector2(0, 12)
-shape = SubResource("RectangleShape2D_7ihvk")
-debug_color = Color(0.9232313, 4.928589e-05, 0.6864619, 0.41960785)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1689183972]
 libraries/ = SubResource("AnimationLibrary_am4us")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1382185506]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=625108734]
+shape = SubResource("RectangleShape2D_jhhw3")
+
+[node name="Door" type="Area2D" parent="StaticBody2D2" unique_id=1543417612]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/Door" unique_id=1165750051]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_0m0ms")
+debug_color = Color(0.9232313, 4.928589e-05, 0.6864619, 0.41960785)
