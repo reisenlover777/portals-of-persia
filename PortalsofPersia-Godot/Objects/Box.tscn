@@ -18,7 +18,7 @@ script = ExtResource("1_ewiju")
 
 [node name="PlaceholderBox" type="Sprite2D" parent="." unique_id=803413269]
 position = Vector2(0, 3.1843501e-06)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2.6, 2.6)
 texture = ExtResource("2_ewiju")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1302610838]
