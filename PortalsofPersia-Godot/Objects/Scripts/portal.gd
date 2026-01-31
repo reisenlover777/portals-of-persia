@@ -18,6 +18,8 @@ func _ready() -> void:
 				pairedPortal = get_tree().get_nodes_in_group("Portal").get(1);
 	if pairedPortal == null:
 		$AnimatedSprite2D.play("Green")
+	elif pairedPortal.animationNode == null:
+		$AnimatedSprite2D.play("Green")
 	elif pairedPortal.animationNode.animation == "Purple":
 		$AnimatedSprite2D.play("Green")
 	else:

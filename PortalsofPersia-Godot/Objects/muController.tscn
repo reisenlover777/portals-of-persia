@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn2cc2tlu2gci"]
+[gd_scene format=3 uid="uid://dn2cc2tlu2gci"]
 
 [ext_resource type="Script" uid="uid://2qritxski58t" path="res://Objects/mu_controller.gd" id="1_fcbfa"]
 
