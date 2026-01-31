@@ -41,12 +41,9 @@ position = Vector2(224, -360)
 position = Vector2(435, 608)
 scale = Vector2(1, 0.3)
 
-<<<<<<< HEAD
 [node name="Node2D2" parent="." unique_id=1062318447 instance=ExtResource("8_qc3lj")]
 position = Vector2(34, 160)
 
-=======
->>>>>>> dca165c778868387f3af3ea12fbf8ecd4df6265b
 [node name="Node2D3" parent="." unique_id=913388823 instance=ExtResource("8_qc3lj")]
 z_index = -2
 position = Vector2(281, 32)
