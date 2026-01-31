@@ -38,6 +38,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		return
 	if body is TileMapLayer or body in get_tree().get_nodes_in_group("Portal"):
 		return
+	if body is StaticBody2D:
+		return
 	print(body.global_position)
 	body.global_position = pairedPortal.global_position+out.rotated(pairedPortal.global_rotation)
 	print(body.global_position)
